@@ -1,38 +1,47 @@
 {
 	"GS" : {
 		"ID" : 7,
-		"name" : "Great Sword"
+		"name" : "Great Sword",
+		"elem-type" : "H"
 	},
 	"SNS" : {
 		"ID" : 8,
-		"name" : "Sword And Shield"
+		"name" : "Sword And Shield",
+		"elem-type" : "L"
 	},
 	"H" : {
 		"ID" : 9,
-		"name" : "Hammer"
+		"name" : "Hammer",
+		"elem-type" : "M"
 	},
 	"L" : {
 		"ID" : 10,
-		"name" : "Lance"
+		"name" : "Lance",
+		"elem-type" : "M"
 	},
 	"LS" : {
 		"ID" : 13,
-		"name" : "Long Sword"
+		"name" : "Long Sword",
+		"elem-type" : "M"
 	},
 	"SA" : {
 		"ID" : 14,
-		"name" : "Switch Axe"
+		"name" : "Switch Axe",
+		"elem-type" : "M"
 	},
 	"GL" : {
 		"ID" : 15,
-		"name" : "Gunlance"
+		"name" : "Gunlance",
+		"elem-type" : "M"
 	},
 	"DB" : {
 		"ID" : 17,
-		"name" : "Dual Blades"
+		"name" : "Dual Blades",
+		"elem-type" : "L"
 	},
 	"CB" : {
 		"ID" : 20,
-		"name" : "Charge Blade"
+		"name" : "Charge Blade",
+		"elem-type" : "M"
 	}
 }
