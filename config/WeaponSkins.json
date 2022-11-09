@@ -1,0 +1,738 @@
+{
+	"GS" :
+	{
+		"Skins" : 
+		{
+			"Type 41 Wyvernator" : 
+			{
+				"IDs" :
+				{
+					"red" : 125,
+					"yellow" : 126,
+					"green" : 127,
+					"blue" : 128,
+					"purple" : 129
+				}
+			},
+			"Siegmund" : 
+			{
+				"IDs" :
+				{
+					"red" : 115,
+					"yellow" : 116,
+					"green" : 117,
+					"blue" : 118,
+					"purple" : 119
+				}
+			},
+			"Bolt" : 
+			{
+				"IDs" :
+				{
+					"red" : 120,
+					"yellow" : 121,
+					"green" : 122,
+					"blue" : 123,
+					"purple" : 124
+				}
+			},
+			"Dragonseal" : 
+			{
+				"IDs" :
+				{
+					"red" : 135,
+					"yellow" : 136,
+					"green" : 137,
+					"blue" : 138,
+					"purple" : 139
+				}
+			},
+			"Flash" : 
+			{
+				"IDs" :
+				{
+					"red" : 130,
+					"yellow" : 131,
+					"green" : 132,
+					"blue" : 133,
+					"purple" : 134
+				}
+			},
+			"Jawblade" : 
+			{
+				"IDs" :
+				{
+					"red" : 241,
+					"yellow" : 242,
+					"green" : 243,
+					"blue" : 244,
+					"purple" : 245
+				}
+			},
+			"Sea-Emperor's Sword" : 
+			{
+				"IDs" :
+				{
+					"red" : 236,
+					"yellow" : 237,
+					"green" : 238,
+					"blue" : 239,
+					"purple" : 240
+				}
+			}
+		}
+	},
+	"SNS" :
+	{
+		"Skins" : 
+		{
+			"Master Bang" : 
+			{
+				"IDs" :
+				{
+					"red" : 127,
+					"yellow" : 128,
+					"green" : 129,
+					"blue" : 130,
+					"purple" : 131
+				}
+			},
+			"Hidden Edge" : 
+			{
+				"IDs" :
+				{
+					"red" : 122,
+					"yellow" : 123,
+					"green" : 124,
+					"blue" : 125,
+					"purple" : 126
+				}
+			},
+			"Frost Edge" : 
+			{
+				"IDs" :
+				{
+					"red" : 137,
+					"yellow" : 138,
+					"green" : 139,
+					"blue" : 140,
+					"purple" : 141
+				}
+			},
+			"Chak Chak" : 
+			{
+				"IDs" :
+				{
+					"red" : 117,
+					"yellow" : 118,
+					"green" : 119,
+					"blue" : 120,
+					"purple" : 121
+				}
+			},
+			"Jhen Kodachi" : 
+			{
+				"IDs" :
+				{
+					"red" : 112,
+					"yellow" : 113,
+					"green" : 114,
+					"blue" : 115,
+					"purple" : 116
+				}
+			},
+			"Golden Falchion" : 
+			{
+				"IDs" :
+				{
+					"red" : 132,
+					"yellow" : 133,
+					"green" : 134,
+					"blue" : 135,
+					"purple" : 136
+				}
+			},
+			"Poison Battleaxe" : 
+			{
+				"IDs" :
+				{
+					"red" : 237,
+					"yellow" : 238,
+					"green" : 239,
+					"blue" : 240,
+					"purple" : 241
+				}
+			},
+			"Giltanas Epee" : 
+			{
+				"IDs" :
+				{
+					"red" : 242,
+					"yellow" : 243,
+					"green" : 244,
+					"blue" : 245,
+					"purple" : 246
+				}
+			}
+		}
+	},
+	"H" :
+	{
+		"Skins" : 
+		{
+			"War Basher" : 
+			{
+				"IDs" :
+				{
+					"red" : 136,
+					"yellow" : 137,
+					"green" : 138,
+					"blue" : 139,
+					"purple" : 140
+				}
+			},
+			"Hidden Breaker" : 
+			{
+				"IDs" :
+				{
+					"red" : 116,
+					"yellow" : 117,
+					"green" : 118,
+					"blue" : 119,
+					"purple" : 120
+				}
+			},
+			"Kitty Hammer" : 
+			{
+				"IDs" :
+				{
+					"red" : 141,
+					"yellow" : 142,
+					"green" : 143,
+					"blue" : 144,
+					"purple" : 145
+				}
+			},
+			"Devil Masher" : 
+			{
+				"IDs" :
+				{
+					"red" : 131,
+					"yellow" : 132,
+					"green" : 133,
+					"blue" : 134,
+					"purple" : 135
+				}
+			},
+			"Lunastra's Crown" : 
+			{
+				"IDs" :
+				{
+					"red" : 126,
+					"yellow" : 127,
+					"green" : 128,
+					"blue" : 129,
+					"purple" : 130
+				}
+			},
+			"Leonid Starcrusher" : 
+			{
+				"IDs" :
+				{
+					"red" : 121,
+					"yellow" : 122,
+					"green" : 123,
+					"blue" : 124,
+					"purple" : 125
+				}
+			},
+			"Crystal Nova" : 
+			{
+				"IDs" :
+				{
+					"red" : 237,
+					"yellow" : 238,
+					"green" : 239,
+					"blue" : 240,
+					"purple" : 241
+				}
+			},
+			"Dragonbreaker" : 
+			{
+				"IDs" :
+				{
+					"red" : 242,
+					"yellow" : 243,
+					"green" : 244,
+					"blue" : 245,
+					"purple" : 246
+				}
+			}
+		}
+	},
+	"L" :
+	{
+		"Skins" : 
+		{
+			"Frontrider Lance" : 
+			{
+				"IDs" :
+				{
+					"red" : 108,
+					"yellow" : 109,
+					"green" : 110,
+					"blue" : 111,
+					"purple" : 112
+				}
+			},
+			"Tusk Lance" : 
+			{
+				"IDs" :
+				{
+					"red" : 98,
+					"yellow" : 99,
+					"green" : 100,
+					"blue" : 101,
+					"purple" : 102
+				}
+			},
+			"Babel Spear" : 
+			{
+				"IDs" :
+				{
+					"red" : 93,
+					"yellow" : 94,
+					"green" : 95,
+					"blue" : 96,
+					"purple" : 97
+				}
+			},
+			"Dragonrider Lance" : 
+			{
+				"IDs" :
+				{
+					"red" : 103,
+					"yellow" : 104,
+					"green" : 105,
+					"blue" : 106,
+					"purple" : 107
+				}
+			},
+			"Silver Prominence" : 
+			{
+				"IDs" :
+				{
+					"red" : 113,
+					"yellow" : 114,
+					"green" : 115,
+					"blue" : 116,
+					"purple" : 117
+				}
+			},
+			"Estoc" : 
+			{
+				"IDs" :
+				{
+					"red" : 209,
+					"yellow" : 210,
+					"green" : 211,
+					"blue" : 212,
+					"purple" : 213
+				}
+			},
+			"Seven-star Lance" : 
+			{
+				"IDs" :
+				{
+					"red" : 204,
+					"yellow" : 205,
+					"green" : 206,
+					"blue" : 207,
+					"purple" : 208
+				}
+			}
+		}
+	},
+	"LS" :
+	{
+		"Skins" : 
+		{
+			"Rimeblade" : 
+			{
+				"IDs" :
+				{
+					"red" : 108,
+					"yellow" : 109,
+					"green" : 110,
+					"blue" : 111,
+					"purple" : 112
+				}
+			},
+			"Wyvern Blade" : 
+			{
+				"IDs" :
+				{
+					"red" : 113,
+					"yellow" : 114,
+					"green" : 115,
+					"blue" : 116,
+					"purple" : 117
+				}
+			},
+			"Arbiter" : 
+			{
+				"IDs" :
+				{
+					"red" : 93,
+					"yellow" : 94,
+					"green" : 95,
+					"blue" : 96,
+					"purple" : 97
+				}
+			},
+			"Saber" : 
+			{
+				"IDs" :
+				{
+					"red" : 98,
+					"yellow" : 99,
+					"green" : 100,
+					"blue" : 101,
+					"purple" : 102
+				}
+			},
+			"Rusty Claymore" : 
+			{
+				"IDs" :
+				{
+					"red" : 103,
+					"yellow" : 104,
+					"green" : 105,
+					"blue" : 106,
+					"purple" : 107
+				}
+			},
+			"Divine Slasher" : 
+			{
+				"IDs" :
+				{
+					"red" : 222,
+					"yellow" : 223,
+					"green" : 224,
+					"blue" : 225,
+					"purple" : 226
+				}
+			},
+			"Netherblade" : 
+			{
+				"IDs" :
+				{
+					"red" : 217,
+					"yellow" : 218,
+					"green" : 219,
+					"blue" : 220,
+					"purple" : 221
+				}
+			}
+		}
+	},
+	"SA" :
+	{
+		"Skins" : 
+		{
+			"Rough Edge" : 
+			{
+				"IDs" :
+				{
+					"red" : 92,
+					"yellow" : 93,
+					"green" : 94,
+					"blue" : 95,
+					"purple" : 96
+				}
+			},
+			"Dragonmaiden Axe" : 
+			{
+				"IDs" :
+				{
+					"red" : 107,
+					"yellow" : 108,
+					"green" : 109,
+					"blue" : 110,
+					"purple" : 111
+				}
+			},
+			"Mighty Switch Axe" : 
+			{
+				"IDs" :
+				{
+					"red" : 87,
+					"yellow" : 88,
+					"green" : 89,
+					"blue" : 90,
+					"purple" : 91
+				}
+			},
+			"Hidden Axe" : 
+			{
+				"IDs" :
+				{
+					"red" : 102,
+					"yellow" : 103,
+					"green" : 104,
+					"blue" : 105,
+					"purple" : 106
+				}
+			},
+			"Switch Axe Regnant" : 
+			{
+				"IDs" :
+				{
+					"red" : 97,
+					"yellow" : 98,
+					"green" : 99,
+					"blue" : 100,
+					"purple" : 101
+				}
+			},
+			"Motor Burst" : 
+			{
+				"IDs" :
+				{
+					"red" : 193,
+					"yellow" : 194,
+					"green" : 195,
+					"blue" : 196,
+					"purple" : 197
+				}
+			},
+			"Deluge" : 
+			{
+				"IDs" :
+				{
+					"red" : 188,
+					"yellow" : 189,
+					"green" : 190,
+					"blue" : 191,
+					"purple" : 192
+				}
+			}
+		}
+	},
+	"GL" :
+	{
+		"Skins" : 
+		{
+			"Full Voltage" : 
+			{
+				"IDs" :
+				{
+					"red" : 105,
+					"yellow" : 106,
+					"green" : 107,
+					"blue" : 108,
+					"purple" : 109
+				}
+			},
+			"Princess Panoply" : 
+			{
+				"IDs" :
+				{
+					"red" : 100,
+					"yellow" : 101,
+					"green" : 102,
+					"blue" : 103,
+					"purple" : 104
+				}
+			},
+			"Luna's Howl" : 
+			{
+				"IDs" :
+				{
+					"red" : 110,
+					"yellow" : 111,
+					"green" : 112,
+					"blue" : 113,
+					"purple" : 114
+				}
+			},
+			"General's Arbalance" : 
+			{
+				"IDs" :
+				{
+					"red" : 115,
+					"yellow" : 116,
+					"green" : 117,
+					"blue" : 118,
+					"purple" : 119
+				}
+			},
+			"Silver Rook" : 
+			{
+				"IDs" :
+				{
+					"red" : 120,
+					"yellow" : 121,
+					"green" : 122,
+					"blue" : 123,
+					"purple" : 124
+				}
+			},
+			"Tyrannenarm" : 
+			{
+				"IDs" :
+				{
+					"red" : 214,
+					"yellow" : 215,
+					"green" : 216,
+					"blue" : 217,
+					"purple" : 218
+				}
+			},
+			"Fangbreaker" : 
+			{
+				"IDs" :
+				{
+					"red" : 209,
+					"yellow" : 210,
+					"green" : 211,
+					"blue" : 212,
+					"purple" : 213
+				}
+			}
+		}
+	},
+	"DB" :
+	{
+		"Skins" : 
+		{
+			"Vprey Claws" : 
+			{
+				"IDs" :
+				{
+					"red" : 115,
+					"yellow" : 116,
+					"green" : 117,
+					"blue" : 118,
+					"purple" : 119
+				}
+			},
+			"Guild Knight Sabers" : 
+			{
+				"IDs" :
+				{
+					"red" : 130,
+					"yellow" : 131,
+					"green" : 132,
+					"blue" : 133,
+					"purple" : 134
+				}
+			},
+			"Twins Regnant" : 
+			{
+				"IDs" :
+				{
+					"red" : 110,
+					"yellow" : 111,
+					"green" : 112,
+					"blue" : 113,
+					"purple" : 114
+				}
+			},
+			"Tessen" : 
+			{
+				"IDs" :
+				{
+					"red" : 120,
+					"yellow" : 121,
+					"green" : 122,
+					"blue" : 123,
+					"purple" : 124
+				}
+			},
+			"Ritual Ephemera" : 
+			{
+				"IDs" :
+				{
+					"red" : 125,
+					"yellow" : 126,
+					"green" : 127,
+					"blue" : 128,
+					"purple" : 129
+				}
+			},
+			"Blizzarioths" : 
+			{
+				"IDs" :
+				{
+					"red" : 222,
+					"yellow" : 223,
+					"green" : 224,
+					"blue" : 225,
+					"purple" : 226
+				}
+			},
+			"Sea-king's Twins" : 
+			{
+				"IDs" :
+				{
+					"red" : 217,
+					"yellow" : 218,
+					"green" : 219,
+					"blue" : 220,
+					"purple" : 221
+				}
+			}
+		}
+	},
+	"CB" :
+	{
+		"Skins" : 
+		{
+			"Elite Blade" : 
+			{
+				"IDs" :
+				{
+					"red" : 105,
+					"yellow" : 106,
+					"green" : 107,
+					"blue" : 108,
+					"purple" : 109
+				}
+			},
+			"Dear Lutemis" : 
+			{
+				"IDs" :
+				{
+					"red" : 110,
+					"yellow" : 111,
+					"green" : 112,
+					"blue" : 113,
+					"purple" : 114
+				}
+			},
+			"Elendskraft" : 
+			{
+				"IDs" :
+				{
+					"red" : 115,
+					"yellow" : 116,
+					"green" : 117,
+					"blue" : 118,
+					"purple" : 119
+				}
+			},
+			"Deceadeus" : 
+			{
+				"IDs" :
+				{
+					"red" : 120,
+					"yellow" : 121,
+					"green" : 122,
+					"blue" : 123,
+					"purple" : 124
+				}
+			}
+		}
+	}
+}

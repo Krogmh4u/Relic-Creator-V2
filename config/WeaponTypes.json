@@ -1,0 +1,38 @@
+{
+	"GS" : {
+		"ID" : 7,
+		"name" : "Great Sword"
+	},
+	"SNS" : {
+		"ID" : 8,
+		"name" : "Sword And Shield"
+	},
+	"H" : {
+		"ID" : 9,
+		"name" : "Hammer"
+	},
+	"L" : {
+		"ID" : 10,
+		"name" : "Lance"
+	},
+	"LS" : {
+		"ID" : 13,
+		"name" : "Long Sword"
+	},
+	"SA" : {
+		"ID" : 14,
+		"name" : "Switch Axe"
+	},
+	"GL" : {
+		"ID" : 15,
+		"name" : "Gunlance"
+	},
+	"DB" : {
+		"ID" : 17,
+		"name" : "Dual Blades"
+	},
+	"CB" : {
+		"ID" : 20,
+		"name" : "Charge Blade"
+	}
+}
