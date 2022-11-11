@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     var WeaponName;
     var DefaultWeaps = new Array(); 
-
+    var ElementCategory;
     
     /**************************************************************************************/
     // INITIALIZATION 
@@ -33,7 +33,23 @@ $(document).ready(function(){
         });
       });
 
-      load.then(() => { reloadSkins();});
+      load.then(() => {
+        reloadSkins();
+
+        var loadElements = new Promise((resolve, reject) => {
+          let i = 0;
+          $.getJSON("config/ElementTable.json", function(eTable){
+            $.each(eTable.elements, function(index, element) {
+              $('#wElement').append($('<option>', { 
+                value: element.id,
+                text : index 
+              }));
+              if(element.id === 9) resolve();
+            });
+          });
+        });
+
+      });
     }
 
     function getRelicColor()
@@ -194,6 +210,144 @@ $(document).ready(function(){
 
     $("#rawAffDef").change( function () {
       statsSliderChanged();
+    });
+
+    /*
+    *      ELEMENT CHANGED CHANGED
+    *      AS WE DONT HAVE THE SAME AMOUNT OF PATTERNS FOR ELEMENT AND STATUS
+    *      WE'LL CAREFULLY REASSIGN THE MAXIMUM LIMIT OF ELEMENT VALUE SLIDER
+    */
+
+    $("#wElement").change( function () {
+      var check = new Promise((resolve, reject) => {
+        $.getJSON("config/ElementTable.json", function(eTable){
+          $.each(eTable.elements, function(index, element) {
+            if(element.id.toString() === $("#wElement").val()){
+              if(element.category === 'element')
+              {
+                $("#elementValue").attr("max", "27");
+                ElementCategory = "element";
+              }
+              else if(element.category === 'status')
+              {
+                ElementCategory = "status";
+                $("#elementValue").attr("max", "19");
+              } 
+              resolve();
+            }
+          });
+        });
+      });
+    });
+
+    /*
+    *      ELEMENT VALUE CHANGED CHANGED
+    *      LAUNCH THE FUNCTION TO WHEN WEAPON TYPE CHANGED
+    *      BECAUSE ELEMENT/STATUS CHANGE ACCORDING TO 
+    *      ELEMENT/STATUS "size" OF WEAPON (["high", "medium", "large"])
+    */
+
+    function getElementOffsetByIndex(cat){
+      let value = parseInt($("#elementValue").val(), 10);
+
+      if(value > 0x19 && ElementCategory === 'element'){
+        if(cat === 'H'){
+          switch(value)
+          {
+            case 0x1A: value= 0x1C; break;
+            case 0x1B: value= 0x58; break;
+          }
+        }
+        else if(cat === 'M'){
+          switch(value)
+          {
+            case 0x1A: value= 0x1C; break;
+            case 0x1B: value= 0x69; break;
+          }
+        }
+        else if(cat === 'L'){
+          switch(value)
+          {
+            case 0x1A: value= 0x1C; break;
+            case 0x1B: value= 0x85; break;
+          }
+        }
+        
+      }else if(value > 0x11 && ElementCategory === 'status'){
+        if(cat === 'H'){
+          switch(value)
+          {
+            case 0x12: value= 0x12; break;
+            case 0x13: value= 0x32; break;
+          }
+        }
+        else if(cat === 'M'){
+          switch(value)
+          {
+            case 0x12: value= 0x14; break;
+            case 0x13: value= 0x43; break;
+          }
+        }
+        else if(cat === 'L'){
+          switch(value)
+          {
+            case 0x12: value= 0x14; break;
+            case 0x13: value= 0x5F; break;
+          }
+        }
+      }
+
+      return ('0' + (value & 0xFF).toString(16)).slice(-2).toUpperCase();
+      
+    }
+
+    function eValueSliderChanged()
+    {
+      var tbl;
+      var currWeapElCat;
+
+      var getCategory = new Promise((resolve, reject) => {
+        $.getJSON("config/WeaponTypes.json", function(data){
+          $.each(data, function(index, element) {
+            if(element.name === $('#wType option:selected').text()){
+              currWeapElCat = Object.values(element)[2];
+              resolve();
+            }
+          });
+        });
+      });
+      
+      getCategory.then(() => { 
+        var table = new Promise((resolve, reject) => {
+          $.getJSON("config/ElementTable.json", function(eTable){
+            ElementCategory === 'element' ? tbl = eTable.table.Element : tbl = eTable.table.Status;
+            $.each(tbl, function(index, element) {
+              if(index === currWeapElCat)
+              {
+                $.each(element, function(key, e) {
+                  if(key === getElementOffsetByIndex(currWeapElCat))
+                  {
+                    $( "#eValue" ).text(e.value);
+                    if(e.latent === false){
+                      $( "#eLatent" ).text("No");
+                      $( "#eLatent" ).attr("style", "color: green;");
+                    }else{
+                      $( "#eLatent" ).text("Yes");
+                      $( "#eLatent" ).attr("style", "color: red;");
+                    }
+                  }
+                });
+                resolve();
+              }
+            });
+          });
+        });
+      });
+      
+    }
+
+    $("#elementValue").change( function () {
+      eValueSliderChanged();
     });
 
 

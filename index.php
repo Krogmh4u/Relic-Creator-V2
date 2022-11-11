@@ -14,6 +14,9 @@
     <label for="wId">Weapon Skin:</label>
       <select id="wId" name="wId"></select>
 
+    <label for="wElement">Element:</label>
+      <select id="wElement"></select>
+
     <button id="btn">generate</button>
     <br>
     <input type="radio" name = "rColor" id="c_red" class="rColor" value="red" checked />
@@ -36,11 +39,18 @@
     <input type="range" id="rawAffDef" name="rawAffDef" min="0" max="21">
     <label for="rawAffDef">Relic Stats</label>
 
+    <input type="range" id="elementValue" name="elementValue" min="0" max="27">
+    <label for="elementValue">Element Value</label>
+
     <hr>
     Attack : <span id="attack"> </span><br>
     Affinity : <span id="affinity"> </span><br>
     Defense : <span id="defense"> </span><br>
     Raw Damage : <span id="raw"> </span><br>
+    <span id='statsillegal' style="color: red;"></span>
+    <hr>
+    Element value : <span id="eValue"> </span><br>
+    Is Element Latent : <span id="eLatent"> </span><br>
     <span id='statsillegal' style="color: red;"></span>
     <hr>
 
