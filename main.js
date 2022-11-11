@@ -141,6 +141,7 @@ $(document).ready(function(){
     $( "#wType" ).change(function() { 
       reloadSkins();
       WeaponName = 'rload';
+      eValueSliderChanged();
     });
 
     /*
@@ -218,7 +219,18 @@ $(document).ready(function(){
     *      WE'LL CAREFULLY REASSIGN THE MAXIMUM LIMIT OF ELEMENT VALUE SLIDER
     */
 
-    $("#wElement").change( function () {
+    $("#elementValue").prop( "disabled", true );
+
+    function elementChanged()
+    {
+      eValueSliderChanged();
+      if(parseInt($(wElement).val(), 10) === 0)
+      {
+        ElementCategory = "none";
+        $("#elementValue").prop( "disabled", true );
+        return;
+      }
+      $("#elementValue").prop( "disabled", false );
       var check = new Promise((resolve, reject) => {
         $.getJSON("config/ElementTable.json", function(eTable){
           $.each(eTable.elements, function(index, element) {
@@ -238,6 +250,10 @@ $(document).ready(function(){
           });
         });
       });
+    }
+
+    $("#wElement").change( function () {
+      elementChanged();
     });
 
     /*
@@ -303,6 +319,13 @@ $(document).ready(function(){
 
     function eValueSliderChanged()
     {
+      if(parseInt($(wElement).val(), 10) === 0 || typeof $(wElement).val() === 'undefined' || isNaN(parseInt($(wElement).val(), 10)))
+      {
+        
+        $( "#eValue" ).text("---");
+        $( "#eLatent" ).text("---");
+        return;
+      }
       var tbl;
       var currWeapElCat;
 
@@ -344,7 +367,7 @@ $(document).ready(function(){
         });
       });
       
-    }
+    }eValueSliderChanged();
 
     $("#elementValue").change( function () {
       eValueSliderChanged();
