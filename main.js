@@ -107,7 +107,7 @@ $(document).ready(function(){
         resolve();
       }); 
       
-      load.then(() => { reloadPreview(); });
+      load.then(() => { reloadPreview(); statsSliderChanged()});
       
     }init();
 
@@ -149,9 +149,53 @@ $(document).ready(function(){
     });
 
     /*
-    *      SUBMIT BUTTON CLICKED
-    *      GENERATING THE RELIC
+    *      STATS SLIDER CHANGED
     */
+
+    function getStatsSliderHexValue(){
+      let radPattern = 0;
+      $("#rawAffDef").val() === "21" ? radPattern = "91" : radPattern = $("#rawAffDef").val();
+      radPattern = parseInt(radPattern, 10).toString(16).toUpperCase();
+      if(radPattern.length == 1)
+        radPattern = '0' + radPattern;
+
+      return radPattern;
+    }
+
+    function statsSliderChanged()
+    {
+      let done = false;
+      var table = new Promise((resolve, reject) => {
+        $.getJSON("config/BladeMasterTable.json", function(data){
+          $.each(data, function(index, element) {
+            if(done){
+              resolve();
+              return false;
+            }
+            if(index === $("#wType").val())
+            {
+              $.each(element, function(offset, obj) {
+                if(offset === getStatsSliderHexValue()){
+                  $("#attack").text(obj.Attack);
+                  $("#affinity").text(obj.Affinity + "%");
+                  $("#defense").text(obj.Defense);
+                  $("#raw").text(obj.Raw);
+                  if(typeof obj.Msg !== 'undefined')
+                    $("#statsillegal").html(obj.Msg);
+                  else $("#statsillegal").text("");
+                  done = true;
+                };
+              });
+            }
+          });
+        });
+      });
+    }statsSliderChanged();
+
+    $("#rawAffDef").change( function () {
+      statsSliderChanged();
+    });
+
 
     $("#btn").click(function() { 
       var weaponType = 0;
@@ -190,9 +234,15 @@ $(document).ready(function(){
         });
 
         skin.then(() => {
-          var fileBuffer = new Int8Array(28);
-          fileBuffer[0] = weaponType;
-          fileBuffer[2] = weaponID;
+          var fileBuffer = new Uint8Array(28);
+          
+          let wId = weaponID + getRelicColor();
+
+          fileBuffer[0x00] = weaponType;
+          fileBuffer[0x02] = wId;
+          fileBuffer[0x0D] = parseInt(getStatsSliderHexValue(), 16);
+          
+          console.log(fileBuffer);
 
           var saveFileBuffer = (function () {
               var a = document.createElement("a");

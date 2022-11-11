@@ -31,6 +31,19 @@
     <input type="radio" name = "rColor" id="c_purple" class="rColor" value="purple" />
     <label for="c_purple">purple</label>
 
+    <br><br>
+
+    <input type="range" id="rawAffDef" name="rawAffDef" min="0" max="21">
+    <label for="rawAffDef">Relic Stats</label>
+
+    <hr>
+    Attack : <span id="attack"> </span><br>
+    Affinity : <span id="affinity"> </span><br>
+    Defense : <span id="defense"> </span><br>
+    Raw Damage : <span id="raw"> </span><br>
+    <span id='statsillegal' style="color: red;"></span>
+    <hr>
+
     <br>
     <img id="rPreview" alt="Relic Preview"></img>
 </body>
