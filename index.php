@@ -15,5 +15,8 @@
       <select id="wId" name="wId"></select>
 
     <button id="btn">generate</button>
+
+    <br>
+    <img id="rPreview" alt="Relic Preview"></img>
 </body>
 </html>

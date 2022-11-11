@@ -1,10 +1,42 @@
 $(document).ready(function(){
 
+    var WeaponName;
+    var DefaultWeaps = new Array(); 
 
-
+    
     /**************************************************************************************/
     // INITIALIZATION 
     /**************************************************************************************/
+
+    function init()
+    {
+      let aLength = 0;
+
+      var load = new Promise((resolve, reject) => {
+        $.getJSON("config/WeaponSkins.json", function(sdata){
+        let done = false;
+        $.each(sdata, function(index, element) {
+            $.each(element.Skins, function(sIndex, sElement) {
+              if(!done){
+                const weap = {
+                  type : index,
+                  name : sIndex
+                };
+                DefaultWeaps.push(weap);
+                done = true;
+              }
+            });
+            if(aLength === Object.keys(sdata).length - 1) resolve();
+            ++aLength;
+            done = false;
+          });
+        });
+      });
+
+      load.then(() => { reloadSkins();});
+    }
+
+
 
     /*
     *      APPEND WEAPON TYPES <select> OPTIONS WITH JSON OBJECTS
@@ -25,28 +57,49 @@ $(document).ready(function(){
     *      ACCORDING TO THE SELECTED WEAPON TYPE
     */
 
-    function reloadSkins() {
-        $('#wId').empty(); // REMOVE ALL IDS FROM <select> OPTIONS
-
-        $.getJSON("config/WeaponSkins.json", function(data){
-        let selected = $( "#wType" ).val();
-        $.each(data, function(index, element) {
-          if(index == selected)
-          {
-            $.each(element.Skins, function(sIndex, sElement) {
-              $('#wId').append($('<option>', { 
-                value: sIndex,
-                text : sIndex 
-              }));
-            });
-          }
+    function reloadPreview(){ 
+      
+      if(typeof WeaponName === 'undefined' || WeaponName === 'rload'){ 
+        DefaultWeaps.forEach(function(_weapon){ 
+          if(_weapon.type === $( "#wType" ).val()) WeaponName = _weapon.name;
         });
-      });
-    }reloadSkins(); //CALL THE FUNCTION ONCE TO AVOID LETTING THE <select> OPTIONS EMPTY WHEN PAGE LOADED
+      }
 
-    
+      let extension = ".png";
+      let weapName = WeaponName.replace(/['"]+/g, '').replaceAll('-', '');
+      let srcPath = "Images/" + $("#wType option:selected").text() + "/" + weapName.replaceAll(' ', '').trim() + "/0" + extension;
 
+      console.log(srcPath);
 
+      $("#rPreview").attr("src",srcPath);
+    }
+
+    function reloadSkins() {
+
+      $('#wId').empty(); // REMOVE ALL IDS FROM <select> OPTIONS
+      var load = new Promise((resolve, reject) => {
+          $.getJSON("config/WeaponSkins.json", function(data){
+          let selected = $( "#wType" ).val();
+          $.each(data, function(index, element) {
+            if(index == selected)
+            {
+              let i = 0;
+              $.each(element.Skins, function(sIndex, sElement) {
+                  $('#wId').append($('<option>', { 
+                    value: sIndex,
+                    text : sIndex 
+                  }));    
+                ++i;
+              });
+            }
+          });
+        });
+        resolve();
+      }); 
+      
+      load.then(() => { reloadPreview(); });
+      
+    }init();
 
     /**************************************************************************************/
     // EVENTS
@@ -58,8 +111,20 @@ $(document).ready(function(){
     *      SUITABLE SKINS
     */
 
+
     $( "#wType" ).change(function() { 
       reloadSkins();
+      WeaponName = 'rload';
+    });
+
+    /*
+    *      SELECTED WEAPON SKIN CHANGED
+    *      SO WE CHANGE THE PREVIEW IMAGE
+    */
+
+    $( "#wId" ).change(function() { 
+      WeaponName = $("#wId").val();
+      reloadPreview();
     });
 
 
