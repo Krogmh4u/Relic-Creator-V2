@@ -36,6 +36,18 @@ $(document).ready(function(){
       load.then(() => { reloadSkins();});
     }
 
+    function getRelicColor()
+    {
+      switch($('input[name="rColor"]:checked').val())
+      {
+        case 'red' : return 0; break;
+        case 'yellow' : return 1; break;
+        case 'green' : return 2; break;
+        case 'blue' : return 3; break;
+        case 'purple' : return 4; break;
+        default : return 0; break;
+      }
+    }
 
 
     /*
@@ -67,9 +79,7 @@ $(document).ready(function(){
 
       let extension = ".png";
       let weapName = WeaponName.replace(/['"]+/g, '').replaceAll('-', '');
-      let srcPath = "Images/" + $("#wType option:selected").text() + "/" + weapName.replaceAll(' ', '').trim() + "/0" + extension;
-
-      console.log(srcPath);
+      let srcPath = "Images/" + $("#wType option:selected").text() + "/" + weapName.replaceAll(' ', '').trim() + "/" + getRelicColor() + extension;
 
       $("#rPreview").attr("src",srcPath);
     }
@@ -127,6 +137,16 @@ $(document).ready(function(){
       reloadPreview();
     });
 
+
+    /*
+    *      WEAPON COLOR CHANGED
+    *      UPDATE PREVIEW
+    */
+
+    $('input[type=radio][name=rColor]').change(function() {
+      WeaponName = $("#wId").val();
+      reloadPreview();
+    });
 
     /*
     *      SUBMIT BUTTON CLICKED
