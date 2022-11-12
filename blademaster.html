@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relic Creator V1.3</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+    <label for="wType">Weapon Type:</label>
+      <select id="wType" name="wType"></select>
+
+    <label for="wId">Weapon Skin:</label>
+      <select id="wId" name="wId"></select>
+
+    <label for="wElement">Element:</label>
+      <select id="wElement"></select>
+
+    <label for="wRarity">Rarity:</label>
+      <select id="wRarity"></select>
+
+    <button id="btn">generate</button>
+    <br>
+    <input type="radio" name = "rColor" id="c_red" class="rColor" value="red" checked />
+    <label for="c_red">red</label>
+
+    <input type="radio" name = "rColor" id="c_yellow" class="rColor" value="yellow" />
+    <label for="c_yellow">yellow</label>
+
+    <input type="radio" name = "rColor" id="c_green" class="rColor" value="green" />
+    <label for="c_green">green</label>
+
+    <input type="radio" name = "rColor" id="c_blue" class="rColor" value="blue" />
+    <label for="c_blue">blue</label>
+
+    <input type="radio" name = "rColor" id="c_purple" class="rColor" value="purple" />
+    <label for="c_purple">purple</label>
+
+    <br><br>
+
+    <input type="range" id="rawAffDef" name="rawAffDef" min="0" max="21">
+    <label for="rawAffDef">Relic Stats</label>
+
+    <input type="range" id="elementValue" name="elementValue" min="0" max="27">
+    <label for="elementValue">Element Value</label>
+
+    <hr>
+    Attack : <span id="attack"> </span><br>
+    Affinity : <span id="affinity"> </span><br>
+    Defense : <span id="defense"> </span><br>
+    Raw Damage : <span id="raw"> </span><br>
+    <span id='statsillegal' style="color: red;"></span>
+    <hr>
+    Element value : <span id="eValue"> </span><br>
+    Is Element Latent : <span id="eLatent"> </span><br>
+    <span id='statsillegal' style="color: red;"></span>
+    <hr>
+
+    <br>
+    <img id="rPreview" alt="Relic Preview"></img>
+</body>
+</html>
