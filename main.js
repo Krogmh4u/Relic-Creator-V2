@@ -3,6 +3,7 @@ $(document).ready(function(){
     var WeaponName;
     var DefaultWeaps = new Array(); 
     var ElementCategory;
+    var ElementValueID;
     
     /**************************************************************************************/
     // INITIALIZATION 
@@ -45,6 +46,20 @@ $(document).ready(function(){
                 text : index 
               }));
               if(element.id === 9) resolve();
+            });
+          });
+        });
+
+        var loadRarities = new Promise((resolve, reject) => {
+          let i = 0;
+          $.getJSON("config/Rarity.json", function(rObject){
+            $.each(rObject, function(index, element) {
+              $('#wRarity').append($('<option>', { 
+                value: element.id,
+                text : index 
+              }));
+
+              if(element.id === Object.keys(rObject).length - 1) resolve();
             });
           });
         });
@@ -350,6 +365,7 @@ $(document).ready(function(){
                 $.each(element, function(key, e) {
                   if(key === getElementOffsetByIndex(currWeapElCat))
                   {
+                    ElementValueID = getElementOffsetByIndex(currWeapElCat);
                     $( "#eValue" ).text(e.value);
                     if(e.latent === false){
                       $( "#eLatent" ).text("No");
@@ -377,6 +393,12 @@ $(document).ready(function(){
     $("#btn").click(function() { 
       var weaponType = 0;
       var weaponID = 0;
+      var weaponElementType = 0;
+      var weaponElementValue = 0;
+      var weaponRarity = parseInt($( "#wRarity" ).val(), 10);
+
+      weaponElementType = parseInt($( "#wElement" ).val(), 10);
+      weaponElementType === 0 ? weaponElementValue = "00" : weaponElementValue = ElementValueID;
 
       var selectedType = $("#wType").val();
 
@@ -418,8 +440,9 @@ $(document).ready(function(){
           fileBuffer[0x00] = weaponType;
           fileBuffer[0x02] = wId;
           fileBuffer[0x0D] = parseInt(getStatsSliderHexValue(), 16);
-          
-          console.log(fileBuffer);
+          fileBuffer[0x04] = parseInt(weaponElementValue, 16); 
+          fileBuffer[0x05] = weaponElementType;
+          fileBuffer[0x11] = weaponRarity;
 
           var saveFileBuffer = (function () {
               var a = document.createElement("a");
