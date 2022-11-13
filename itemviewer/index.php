@@ -62,10 +62,10 @@
 
 	<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 	  <div class="btn-group mr-5" role="group" aria-label="First group">
-	    <button type="button" class="btn btn-secondary">Previous Page</button>
+	    <button type="button" class="btn btn-secondary" id="prevbtn">Previous Page</button>
 	  </div>
 	  <div class="btn-group mr-5" role="group" aria-label="Second group">
-	    <button type="button" class="btn btn-secondary">Next Page</button>
+	    <button type="button" class="btn btn-secondary" id="nextbtn">Next Page</button><h2>Page <span id="page"></span> of 14</h2>
 	  </div>
 	</div>
 </div>

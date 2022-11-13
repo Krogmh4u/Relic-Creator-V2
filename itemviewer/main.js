@@ -8,13 +8,16 @@ function showItemAttributes(index){
 	rawHtml += "Item type : <b>" + ItemBox[index].type + "</b><br>";
 	rawHtml += "Item description : <b>" + ItemBox[index].description + "</b><br>";
 	rawHtml += "Item rarity : <b>" + ItemBox[index].rarity + "</b><br>";
+	rawHtml += "<b><i>Quantity :</b></i> <strong style=\"color:red;\">" + ItemBox[index].amount + "</strong><br>";
 
 	$("#selecteditem").html(rawHtml);
 }
 
 $(document).ready(function(){
 
+	var CurrentPage = 0;
 
+	$("#page").text((CurrentPage + 1).toString());
 
 	function Utf8ArrayToStr(array) {
 	    var out, i, len, c;
@@ -50,11 +53,10 @@ $(document).ready(function(){
 	}
 
 	function generateGrid(){
-		let index = 0;
+		let index = CurrentPage * 100;
 		let rawHtml;
 
 		for(let i = 0; i < 10; ++i){
-			rawHtml='';
 			rawHtml+= '<tr class="trow">';
 			for(let j = 0; j < 10; ++j)
 			{
@@ -66,14 +68,47 @@ $(document).ready(function(){
 				rawHtml+='</td>';
 			}
 			rawHtml+='</tr>';
-			$("#itemboxgrid").append(rawHtml);
+			
 		}
 
-		
+		$("#itemboxgrid").html(rawHtml);
 		
 	}
 
+	function generateEmptyGrid(){
+		let rawHtml;
+		for(let i = 0; i < 10; ++i){
+			rawHtml+= '<tr class="trow">';
+			for(let j = 0; j < 10; ++j)
+			{
+				rawHtml+='<td class="tcell" id="0">';
+				rawHtml+='<img src="icons/Empty-Slot.png" class="cellimg" onclick="showItemAttributes(0)">';
+				rawHtml+='</td>';
+			}
+			rawHtml+='</tr>';
+			
+		}
 
+		$("#itemboxgrid").html(rawHtml);
+	}generateEmptyGrid();
+
+	$("#nextbtn").click(function(){
+		if(CurrentPage <= 12){
+			++CurrentPage;
+			$("#page").text((CurrentPage + 1).toString());
+			$("#selecteditem").html('');
+			generateGrid();
+		}
+	});
+
+	$("#prevbtn").click(function(){
+		if(CurrentPage > 0){
+			--CurrentPage;
+			$("#page").text((CurrentPage + 1).toString());
+			$("#selecteditem").html('');
+			generateGrid();
+		}
+	});
 
 	$("#save-file").click(function(){
 		if(document.querySelector("#file").value == '') {
@@ -128,6 +163,10 @@ $(document).ready(function(){
 
 			  	for(let i = 0; i < ItemIds.length; ++i){
 			  		let fromTable = ItemTable[ItemIds[i].toString()];
+			  		if(typeof fromTable === 'undefined'){
+			  			console.log("Id : " + ItemIds[i]);
+			  			console.log("Index : " + i);
+			  		}
 			  		let item = 
 			  		{
 			  			"name" : fromTable.name,

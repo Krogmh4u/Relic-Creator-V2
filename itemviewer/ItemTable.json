@@ -754,6 +754,15 @@
 		"icon" : "Barrel-Bomb-Pink.png"
 	},
 
+	"84" : 
+	{
+		"name" : "Pirate Bomb",
+		"type" : "Tool",
+		"rarity" : 4, 
+		"description" : "Fly in the air and land exploding .",
+		"icon" : "Barrel-Bomb-Yellow.png"
+	},
+
 	"85" : 
 	{
 		"name" : "Huskberry",
