@@ -1,5 +1,5 @@
 {
-	"GS" : 
+	"07" : 
     {
         "1" : 
         {
@@ -156,7 +156,7 @@
 
         "20" : 
         {
-            "name" : "Cragscliff",
+            "name" : "Cra07cliff",
             "type" : "Weapon",
             "rarity" : 6, 
             "subtype" : "Great Sword",
@@ -1065,7 +1065,7 @@
 
         "148" : 
         {
-            "name" : "Cragscliff+",
+            "name" : "Cra07cliff+",
             "type" : "Weapon",
             "rarity" : 9, 
             "subtype" : "Great Sword",
@@ -1774,7 +1774,7 @@
             "jpn_exclusive" : "yes"
         }
     },
-    "SNS" : 
+    "08" : 
     {
         "1" : 
         {
@@ -3549,7 +3549,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "H" : 
+    "09" : 
     {
         "1" : 
         {
@@ -3868,7 +3868,7 @@
 
         "36" : 
         {
-            "name" : "Ächtungsblick",
+            "name" : "Ächtun07blick",
             "type" : "Weapon",
             "rarity" : 5, 
             "subtype" : "Hammer",
@@ -5342,7 +5342,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "L" : 
+    "0A" : 
     {
         "1" : 
         {
@@ -6892,7 +6892,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "LBG" :
+    "0B" :
     {
         "1" : 
         {
@@ -8325,7 +8325,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "HBG" :
+    "0C" :
     {
         "1" : 
         {
@@ -9506,7 +9506,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "LS" :
+    "0D" :
     {
         "1" : 
         {
@@ -10806,7 +10806,7 @@
 
         "183" : 
         {
-            "name" : "Akantor Strongsword",
+            "name" : "Akantor Stron07word",
             "type" : "Weapon",
             "rarity" : 10, 
             "subtype" : "Long Sword",
@@ -11020,7 +11020,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "SA" : 
+    "0E" : 
     {
         "1" : 
         {
@@ -12417,7 +12417,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "GL" :
+    "0F" :
     {
         "1" : 
         {
@@ -14030,7 +14030,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "B" :
+    "10" :
     {
         "1" : 
         {
@@ -14646,7 +14646,7 @@
 
         "69" : 
         {
-            "name" : "Kelbi Stingshot",
+            "name" : "Kelbi Stin07hot",
             "type" : "Weapon",
             "rarity" : 3, 
             "subtype" : "Bow",
@@ -14655,7 +14655,7 @@
 
         "70" : 
         {
-            "name" : "Kelbi Strongshot",
+            "name" : "Kelbi Stron07hot",
             "type" : "Weapon",
             "rarity" : 5, 
             "subtype" : "Bow",
@@ -15222,7 +15222,7 @@
 
         "158" : 
         {
-            "name" : "Kelbi Strongshot+",
+            "name" : "Kelbi Stron07hot+",
             "type" : "Weapon",
             "rarity" : 8, 
             "subtype" : "Bow",
@@ -15508,7 +15508,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "DB" : 
+    "11" : 
     {
         "1" : 
         {
@@ -16619,7 +16619,7 @@
 
         "150" : 
         {
-            "name" : "Blizztrios Fangs",
+            "name" : "Blizztrios Fan07",
             "type" : "Weapon",
             "rarity" : 9, 
             "subtype" : "Dual Blades",
@@ -17175,7 +17175,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "HH" : 
+    "12" : 
     {
         "1" : 
         {
@@ -18527,7 +18527,7 @@
             "jpn_exclusive" : "no"
         }
     },
-    "IG" : 
+    "13" : 
     {
         "1" : 
         {
@@ -19654,7 +19654,7 @@
             "jpn_exclusive" : "yes"
         }
     },
-    "CB" :
+    "14" :
     {
         "1" : 
         {
