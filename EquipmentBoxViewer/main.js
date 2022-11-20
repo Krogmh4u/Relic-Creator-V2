@@ -116,52 +116,50 @@ $(document).ready(function(){
     			eqps.push(CurrentEqp);
     		};
 
-    		fetch("../config/WeaponsTable.json")
-			  .then(response => response.json())
-			  .then(function(WeaponsTable){
-			  	fetch("../config/WeaponSkins.json")
-							  .then(response => response.json())
-							  .then(function(RelicSkins){
-					for(eqp of eqps)
-				  	{
-				  		if(eqp.EquipmentID === 0 || eqp.EquipmentType === 0){
-				  			EquipmentBox.push(
-				  				{
-				  					"id" : 0,
-				  					"name" : "none", 
-				  					"rarity" : 0,
-				  					"type" : "none",
-				  					"icon" : "icons/empty.png"
-				  				});
-				  		}else if(eqp.EquipmentType >= 0x07 && eqp.EquipmentType <= 0x14) { // weapon
-				  			let strType;
-				  			eqp.EquipmentType > 0xF ? strType = eqp.EquipmentType.toString(16).toUpperCase() : strType = '0' + eqp.EquipmentType.toString(16).toUpperCase();
-				  			let TEquipment = WeaponsTable[strType][eqp.EquipmentID.toString()];
+    		fetch("../config/WeaponsTable.json").then(response => response.json()).then(function(WeaponsTable){
+			fetch("../config/WeaponSkins.json").then(response => response.json()).then(function(RelicSkins){
+			fetch("../config/ArmorTable.json").then(response => response.json()).then(function(ArmorIds){
+			for(eqp of eqps)
+		  	{
+		  		var EqpObj;
 
-				  			if(typeof TEquipment !== 'undefined')  // if not relic
-				  			{
-				  				console.log("Found WEAPON " + TEquipment.name);
-				  			}
-				  			else
-				  			{
-				  				var sTable = RelicSkins[GetStrType(strType.toUpperCase())].Skins;
-				  				Object.keys(sTable).forEach(function(key) {
-				  					Object.keys(sTable[key].IDs).forEach(function(sIDtbl) {
-				  						if(eqp.EquipmentID === sTable[key].IDs[sIDtbl]){
-				  							console.log("Found RELIC " + key);
-				  						}
-				  					});
-								  
-								});
+		  		if(eqp.EquipmentID === 0 || eqp.EquipmentType === 0){
+		  			
+		  		}
+		  		else if(eqp.EquipmentType >= 0x01 && eqp.EquipmentType <= 0x05) { // armor
+		  			let strType;
+		  			eqp.EquipmentType > 0xF ? strType = eqp.EquipmentType.toString(16).toUpperCase() : strType = '0' + eqp.EquipmentType.toString(16).toUpperCase();
+		  			let TEquipment = ArmorIds[strType][eqp.EquipmentID.toString()];
+		  			if(typeof TEquipment !== 'undefined')  // if not relic
+		  			{
+		  				console.log("Found WEAPON " + TEquipment.name);
+		  			}
+		  		}
+		  		else if(eqp.EquipmentType >= 0x07 && eqp.EquipmentType <= 0x14) { // weapon
+		  			let strType;
+		  			eqp.EquipmentType > 0xF ? strType = eqp.EquipmentType.toString(16).toUpperCase() : strType = '0' + eqp.EquipmentType.toString(16).toUpperCase();
+		  			let TEquipment = WeaponsTable[strType][eqp.EquipmentID.toString()];
 
-				  			}
-				  			
-				  		}
-				  	}
+		  			if(typeof TEquipment !== 'undefined')  // if not relic
+		  			{
+		  				console.log("Found WEAPON " + TEquipment.name);
+		  			}
+		  			else
+		  			{
+		  				var sTable = RelicSkins[GetStrType(strType.toUpperCase())].Skins;
+		  				Object.keys(sTable).forEach(function(key) {
+		  					Object.keys(sTable[key].IDs).forEach(function(sIDtbl) {
+		  						if(eqp.EquipmentID === sTable[key].IDs[sIDtbl]){
+		  							console.log("Found RELIC " + key);
+		  						}
+		  					});
+						  
+						});
 
-				});	
-			 });
-
+		  			}
+		  			
+		  		}
+		  	}});});}); // lol
     	};
 
 	});
