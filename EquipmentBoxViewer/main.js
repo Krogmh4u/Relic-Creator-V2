@@ -38,6 +38,27 @@ $(document).ready(function(){
 	    return out;
 	}
 
+	function GetStrType(type)
+	{
+		switch(type){
+		case "07": return "GS"; break;
+		case "08": return "SNS"; break;
+		case "09": return "H"; break;
+		case "0A": return "L"; break;
+		case "0B": return "LBG"; break;		
+		case "0C": return "HBG"; break;
+		case "0D": return "LS"; break;
+		case "0E": return "SA"; break;
+		case "0F": return "GL"; break;
+		case "10": return "BOW"; break;
+		case "11": return "DB"; break;
+		case "12": return "HH"; break;
+		case "13": return "IG"; break;
+		case "14": return "CB"; break;
+		default: return "N/A"; break;
+		}
+	}
+
 	function generateEmptyGrid(){
 		let rawHtml;
 		for(let i = 0; i < 10; ++i){
@@ -83,13 +104,14 @@ $(document).ready(function(){
 
     		$("#username").html("Loaded user : <b style='color: blue;'>" + username + '</b>');
 
-    		let eqps = [];
+    		var eqps = [];
 
     		for(let pos = 0x0173E; pos < 0x0BB32; pos += 0x1C){
-    			let CurrentEqp = 
+    			var CurrentEqp = 
     			{
     				"EquipmentType" : fileBuffer[pos],
-    				"EquipmentID" : (fileBuffer[pos + 0x03] << 8) + fileBuffer[pos + 0x02]
+    				"EquipmentID" : (fileBuffer[pos + 0x03] << 8) + fileBuffer[pos + 0x02],
+    				"PosInBuffer" : pos
     			};
     			eqps.push(CurrentEqp);
     		};
@@ -97,28 +119,48 @@ $(document).ready(function(){
     		fetch("../config/WeaponsTable.json")
 			  .then(response => response.json())
 			  .then(function(WeaponsTable){
-			  	for(eqp of eqps)
-			  	{
-			  		if(eqp.EquipmentID === 0 || eqp.EquipmentType === 0){
-			  			EquipmentBox.push(
-			  				{
-			  					"id" : 0,
-			  					"name" : "none", 
-			  					"rarity" : 0,
-			  					"type" : "none",
-			  					"icon" : "icons/empty.png"
-			  				});
-			  		}else if(eqp.EquipmentType >= 0x07 && eqp.EquipmentType <= 0x14) { // weapon
-			  			let strType;
-			  			eqp.EquipmentType > 0xF ? strType = eqp.EquipmentType.toString(16).toUpperCase() : strType = '0' + eqp.EquipmentType.toString(16).toUpperCase();
-			  			let TEquipment = WeaponsTable[strType][eqp.EquipmentID.toString()];
+			  	fetch("../config/WeaponSkins.json")
+							  .then(response => response.json())
+							  .then(function(RelicSkins){
+					for(eqp of eqps)
+				  	{
+				  		if(eqp.EquipmentID === 0 || eqp.EquipmentType === 0){
+				  			EquipmentBox.push(
+				  				{
+				  					"id" : 0,
+				  					"name" : "none", 
+				  					"rarity" : 0,
+				  					"type" : "none",
+				  					"icon" : "icons/empty.png"
+				  				});
+				  		}else if(eqp.EquipmentType >= 0x07 && eqp.EquipmentType <= 0x14) { // weapon
+				  			let strType;
+				  			eqp.EquipmentType > 0xF ? strType = eqp.EquipmentType.toString(16).toUpperCase() : strType = '0' + eqp.EquipmentType.toString(16).toUpperCase();
+				  			let TEquipment = WeaponsTable[strType][eqp.EquipmentID.toString()];
 
-			  			if(typeof TEquipment !== 'undefined') console.log(TEquipment.name);  // if not a relic
-			  			
-			  		}
-			  	}
+				  			if(typeof TEquipment !== 'undefined')  // if not relic
+				  			{
+				  				console.log("Found WEAPON " + TEquipment.name);
+				  			}
+				  			else
+				  			{
+				  				var sTable = RelicSkins[GetStrType(strType.toUpperCase())].Skins;
+				  				Object.keys(sTable).forEach(function(key) {
+				  					Object.keys(sTable[key].IDs).forEach(function(sIDtbl) {
+				  						if(eqp.EquipmentID === sTable[key].IDs[sIDtbl]){
+				  							console.log("Found RELIC " + key);
+				  						}
+				  					});
+								  
+								});
+
+				  			}
+				  			
+				  		}
+				  	}
+
+				});	
 			 });
-
 
     	};
 
