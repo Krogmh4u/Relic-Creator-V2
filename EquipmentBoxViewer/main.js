@@ -1,5 +1,5 @@
 var EquipmentBox = [];
-
+var fileBuffer;
 $(document).ready(function(){
 	var CurrentPage = 0;
 
@@ -90,7 +90,7 @@ $(document).ready(function(){
 		reader.onload = function(e) {
 			var rawLog = reader.result;
 			if(rawLog.length !== 0x13DF8) return;
-			var fileBuffer = new Uint8Array(0x13DF8);
+			fileBuffer = new Uint8Array(0x13DF8);
 
     		for (var i = 0; i < rawLog.length; i++) fileBuffer[i] = rawLog.charCodeAt(i);
 
@@ -111,7 +111,7 @@ $(document).ready(function(){
     			{
     				"EquipmentType" : fileBuffer[pos],
     				"EquipmentID" : (fileBuffer[pos + 0x03] << 8) + fileBuffer[pos + 0x02],
-    				"PosInBuffer" : pos
+    				"BufferOffset" : pos
     			};
     			eqps.push(CurrentEqp);
     		};
@@ -119,21 +119,23 @@ $(document).ready(function(){
     		fetch("../config/WeaponsTable.json").then(response => response.json()).then(function(WeaponsTable){
 			fetch("../config/WeaponSkins.json").then(response => response.json()).then(function(RelicSkins){
 			fetch("../config/ArmorTable.json").then(response => response.json()).then(function(ArmorIds){
+			fetch("../config/TalismanTable.json").then(response => response.json()).then(function(TalIds){
 			for(eqp of eqps)
 		  	{
 		  		var EqpObj;
 
 		  		if(eqp.EquipmentID === 0 || eqp.EquipmentType === 0){
-		  			
+		  			EquipmentBox.push({"name" : "Empty", "rarity" : 0, "icon" : "icons/empty.png"});
 		  		}
 		  		else if(eqp.EquipmentType >= 0x01 && eqp.EquipmentType <= 0x05) { // armor
 		  			let strType;
 		  			eqp.EquipmentType > 0xF ? strType = eqp.EquipmentType.toString(16).toUpperCase() : strType = '0' + eqp.EquipmentType.toString(16).toUpperCase();
 		  			let TEquipment = ArmorIds[strType][eqp.EquipmentID.toString()];
-		  			if(typeof TEquipment !== 'undefined')  // if not relic
+		  			if(typeof TEquipment !== 'undefined')
 		  			{
-		  				console.log("Found WEAPON " + TEquipment.name);
-		  			}
+		  				let iconPath = "icons/armors/icons_" + TEquipment.subtype.toLowerCase() + "/" + TEquipment.rarity.toString() + ".png";
+		  				EquipmentBox.push({"name" : TEquipment.name, "rarity" : TEquipment.rarity, "icon" : iconPath});
+		  			}else EquipmentBox.push({"name" : "Empty", "rarity" : 0, "icon" : "icons/empty.png"});
 		  		}
 		  		else if(eqp.EquipmentType >= 0x07 && eqp.EquipmentType <= 0x14) { // weapon
 		  			let strType;
@@ -142,7 +144,8 @@ $(document).ready(function(){
 
 		  			if(typeof TEquipment !== 'undefined')  // if not relic
 		  			{
-		  				console.log("Found WEAPON " + TEquipment.name);
+		  				let iconPath = "icons/" + GetStrType(strType).toLowerCase() + "/" + TEquipment.rarity.toString() + ".png";
+		  				EquipmentBox.push({"name" : TEquipment.name, "rarity" : TEquipment.rarity, "icon" : iconPath});
 		  			}
 		  			else
 		  			{
@@ -150,7 +153,8 @@ $(document).ready(function(){
 		  				Object.keys(sTable).forEach(function(key) {
 		  					Object.keys(sTable[key].IDs).forEach(function(sIDtbl) {
 		  						if(eqp.EquipmentID === sTable[key].IDs[sIDtbl]){
-		  							console.log("Found RELIC " + key);
+		  							let iconPath = "icons/" + GetStrType(strType).toLowerCase() + "/" + fileBuffer[eqp.BufferOffset + 0x11] + 1 + ".png";
+		  						    EquipmentBox.push({"name" : key, "rarity" : fileBuffer[eqp.BufferOffset + 0x11] + 1, "icon" : iconPath});
 		  						}
 		  					});
 						  
@@ -158,8 +162,15 @@ $(document).ready(function(){
 
 		  			}
 		  			
+		  		}else if(eqp.EquipmentType === 6) // talisman
+		  		{
+		  			let talisman = TalIds[eqp.EquipmentID.toString()];
+		  			if(typeof talisman !== 'undefined'){
+		  				let iconPath = "icons/talismans/" + talisman.rarity.toString() + ".png";
+		  				EquipmentBox.push({"name" : talisman.name, "rarity" : talisman.rarity, "icon" : iconPath});
+		  			}else EquipmentBox.push({"name" : "Empty", "rarity" : 0, "icon" : "icons/empty.png"});
 		  		}
-		  	}});});}); // lol
+		  	}});});});}); // lol
     	};
 
 	});
