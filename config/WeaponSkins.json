@@ -1,291 +1,307 @@
 {
 	"HBG" : 
 	{
-		"Dual Threat" :
+		"Skins" :
 		{
-			"IDs" :
+			"Dual Threat" :
 			{
-				"red" : 60,
-				"yellow" : 61,
-				"green" : 62,
-				"blue" : 63,
-				"purple" : 64
-			}
-		},
-		"Chaos Wing" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 60,
+					"yellow" : 61,
+					"green" : 62,
+					"blue" : 63,
+					"purple" : 64
+				}
+			},
+			"Chaos Wing" :
 			{
-				"red" : 65,
-				"yellow" : 66,
-				"green" : 67,
-				"blue" : 68,
-				"purple" : 69
-			}
-		},
-		"Cahoe" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 65,
+					"yellow" : 66,
+					"green" : 67,
+					"blue" : 68,
+					"purple" : 69
+				}
+			},
+			"Cahoe" :
 			{
-				"red" : 150,
-				"yellow" : 151,
-				"green" : 152,
-				"blue" : 153,
-				"purple" : 154
-			}
-		},
-		"Gigant Launcher" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 150,
+					"yellow" : 151,
+					"green" : 152,
+					"blue" : 153,
+					"purple" : 154
+				}
+			},
+			"Gigant Launcher" :
 			{
-				"red" : 145,
-				"yellow" : 146,
-				"green" : 147,
-				"blue" : 148,
-				"purple" : 149
+				"IDs" :
+				{
+					"red" : 145,
+					"yellow" : 146,
+					"green" : 147,
+					"blue" : 148,
+					"purple" : 149
+				}
 			}
 		}
 	},
 	"LBG" : 
 	{
-		"Barro Barrel" :
+		"Skins" :
 		{
-			"IDs" :
+			"Barro Barrel" :
 			{
-				"red" : 84,
-				"yellow" : 85,
-				"green" : 86,
-				"blue" : 87,
-				"purple" : 88
-			}
-		},
-		"Thundercrack" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 84,
+					"yellow" : 85,
+					"green" : 86,
+					"blue" : 87,
+					"purple" : 88
+				}
+			},
+			"Thundercrack" :
 			{
-				"red" : 89,
-				"yellow" : 90,
-				"green" : 91,
-				"blue" : 92,
-				"purple" : 93
-			}
-		},
-		"Frilly Parasol" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 89,
+					"yellow" : 90,
+					"green" : 91,
+					"blue" : 92,
+					"purple" : 93
+				}
+			},
+			"Frilly Parasol" :
 			{
-				"red" : 173,
-				"yellow" : 174,
-				"green" : 175,
-				"blue" : 176,
-				"purple" : 177
-			}
-		},
-		"Durambarrel" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 173,
+					"yellow" : 174,
+					"green" : 175,
+					"blue" : 176,
+					"purple" : 177
+				}
+			},
+			"Durambarrel" :
 			{
-				"red" : 178,
-				"yellow" : 179,
-				"green" : 180,
-				"blue" : 181,
-				"purple" : 182
+				"IDs" :
+				{
+					"red" : 178,
+					"yellow" : 179,
+					"green" : 180,
+					"blue" : 181,
+					"purple" : 182
+				}
 			}
 		}
 	},
 	"BOW" : 
 	{
-		"Queen Blaster" :
+		"Skins" :
 		{
-			"IDs" :
+			"Queen Blaster" :
 			{
-				"red" : 97,
-				"yellow" : 98,
-				"green" : 99,
-				"blue" : 100,
-				"purple" : 101
-			}
-		},
-		"Prominence Bow" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 97,
+					"yellow" : 98,
+					"green" : 99,
+					"blue" : 100,
+					"purple" : 101
+				}
+			},
+			"Prominence Bow" :
 			{
-				"red" : 92,
-				"yellow" : 93,
-				"green" : 94,
-				"blue" : 95,
-				"purple" : 96
-			}
-		},
-		"Icesteel Bow" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 92,
+					"yellow" : 93,
+					"green" : 94,
+					"blue" : 95,
+					"purple" : 96
+				}
+			},
+			"Icesteel Bow" :
 			{
-				"red" : 102,
-				"yellow" : 103,
-				"green" : 104,
-				"blue" : 105,
-				"purple" : 106
-			}
-		},
-		"Akantor Bow" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 102,
+					"yellow" : 103,
+					"green" : 104,
+					"blue" : 105,
+					"purple" : 106
+				}
+			},
+			"Akantor Bow" :
 			{
-				"red" : 87,
-				"yellow" : 88,
-				"green" : 89,
-				"blue" : 90,
-				"purple" : 91
-			}
-		},
-		"Bow of Rack & Ruin" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 87,
+					"yellow" : 88,
+					"green" : 89,
+					"blue" : 90,
+					"purple" : 91
+				}
+			},
+			"Bow of Rack & Ruin" :
 			{
-				"red" : 107,
-				"yellow" : 108,
-				"green" : 109,
-				"blue" : 110,
-				"purple" : 111
-			}
-		},
-		"Dragon Bow" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 107,
+					"yellow" : 108,
+					"green" : 109,
+					"blue" : 110,
+					"purple" : 111
+				}
+			},
+			"Dragon Bow" :
 			{
-				"red" : 199,
-				"yellow" : 200,
-				"green" : 201,
-				"blue" : 202,
-				"purple" : 203
-			}
-		},
-		"Eclipse Bow" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 199,
+					"yellow" : 200,
+					"green" : 201,
+					"blue" : 202,
+					"purple" : 203
+				}
+			},
+			"Eclipse Bow" :
 			{
-				"red" : 194,
-				"yellow" : 195,
-				"green" : 196,
-				"blue" : 197,
-				"purple" : 198
+				"IDs" :
+				{
+					"red" : 194,
+					"yellow" : 195,
+					"green" : 196,
+					"blue" : 197,
+					"purple" : 198
+				}
 			}
 		}
+		
 	},
 	"IG" : 
 	{
-		"Bone Staff" :
+		"Skins" :
 		{
-			"IDs" :
+			"Bone Staff" :
 			{
-				"red" : 138,
-				"yellow" : 139,
-				"green" : 140,
-				"blue" : 141,
-				"purple" : 142
-			}
-		},
-		"Sect Happa" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 138,
+					"yellow" : 139,
+					"green" : 140,
+					"blue" : 141,
+					"purple" : 142
+				}
+			},
+			"Sect Happa" :
 			{
-				"red" : 153,
-				"yellow" : 154,
-				"green" : 155,
-				"blue" : 156,
-				"purple" : 157
-			}
-		},
-		"Leumundslist" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 153,
+					"yellow" : 154,
+					"green" : 155,
+					"blue" : 156,
+					"purple" : 157
+				}
+			},
+			"Leumundslist" :
 			{
-				"red" : 148,
-				"yellow" : 149,
-				"green" : 150,
-				"blue" : 151,
-				"purple" : 152
-			}
-		},
-		"Metal Mauler" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 148,
+					"yellow" : 149,
+					"green" : 150,
+					"blue" : 151,
+					"purple" : 152
+				}
+			},
+			"Metal Mauler" :
 			{
-				"red" : 143,
-				"yellow" : 144,
-				"green" : 145,
-				"blue" : 146,
-				"purple" : 147
+				"IDs" :
+				{
+					"red" : 143,
+					"yellow" : 144,
+					"green" : 145,
+					"blue" : 146,
+					"purple" : 147
+				}
 			}
 		}
 	},
 	"HH" :
 	{
-		"Basarios Rock" :
+		"Skins" :
 		{
-			"IDs" :
+			"Basarios Rock" :
 			{
-				"red" : 81,
-				"yellow" : 82,
-				"green" : 83,
-				"blue" : 84,
-				"purple" : 85
-			}
-		},
-		"Swell Shell" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 81,
+					"yellow" : 82,
+					"green" : 83,
+					"blue" : 84,
+					"purple" : 85
+				}
+			},
+			"Swell Shell" :
 			{
-				"red" : 91,
-				"yellow" : 92,
-				"green" : 93,
-				"blue" : 94,
-				"purple" : 95
-			}
-		},
-		"Hellstrings" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 91,
+					"yellow" : 92,
+					"green" : 93,
+					"blue" : 94,
+					"purple" : 95
+				}
+			},
+			"Hellstrings" :
 			{
-				"red" : 86,
-				"yellow" : 87,
-				"green" : 88,
-				"blue" : 89,
-				"purple" : 90
-			}
-		},
-		"Gold Chordmaker" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 86,
+					"yellow" : 87,
+					"green" : 88,
+					"blue" : 89,
+					"purple" : 90
+				}
+			},
+			"Gold Chordmaker" :
 			{
-				"red" : 96,
-				"yellow" : 97,
-				"green" : 98,
-				"blue" : 99,
-				"purple" : 100
-			}
-		},
-		"Sonic Glass" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 96,
+					"yellow" : 97,
+					"green" : 98,
+					"blue" : 99,
+					"purple" : 100
+				}
+			},
+			"Sonic Glass" :
 			{
-				"red" : 175,
-				"yellow" : 176,
-				"green" : 177,
-				"blue" : 178,
-				"purple" : 179
-			}
-		},
-		"Hidden Harmonic" :
-		{
-			"IDs" :
+				"IDs" :
+				{
+					"red" : 175,
+					"yellow" : 176,
+					"green" : 177,
+					"blue" : 178,
+					"purple" : 179
+				}
+			},
+			"Hidden Harmonic" :
 			{
-				"red" : 180,
-				"yellow" : 181,
-				"green" : 182,
-				"blue" : 183,
-				"purple" : 184
+				"IDs" :
+				{
+					"red" : 180,
+					"yellow" : 181,
+					"green" : 182,
+					"blue" : 183,
+					"purple" : 184
+				}
 			}
 		}
 	},
